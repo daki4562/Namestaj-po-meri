@@ -1,0 +1,149 @@
+
+:root {
+    --bazni-font: 16px; 
+}
+
+html {
+    /* Povezuje Bootstrapov korenski font sa JavaScript modifikatorom. 
+       Kada JS doda +2px, SVE na stranici raste */
+    font-size: calc(var(--bazni-font) + var(--font-modifikator, 0px)) !important;
+}
+
+body, .form-control, .card, .btn, .nav-link {
+    /*tranzicija*/
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+/* === SVETLA TEMA === */
+body.svetla {
+    --bs-body-bg: #f9f6f0;
+    --bs-body-bg-rgb: 249, 246, 240; /* DODATO ZA BG-BODY KLASU */
+    
+    --bs-body-color: #2a1208;
+    --bs-body-color-rgb: 42, 18, 8; /* DODATO ZA TEKST */
+    
+    --bs-tertiary-bg: #f5efe6;
+    
+    --bs-primary: #8B5523;
+    --bs-primary-rgb: 139, 85, 35;
+    --bs-primary-hover: #C8863C;
+    
+    --bs-card-bg: #ffffff;
+    --bs-card-border-color: rgba(0, 0, 0, 0.1);
+}
+
+body.svetla { background-color: var(--bs-body-bg) !important; }
+body.tamna { background-color: var(--bs-body-bg) !important; }
+
+body.svetla .form-control {
+    background-color: #ffffff !important;
+    color: #2a1208 !important;
+    border-color: #e0dcd5 !important;
+}
+
+/* === TAMNA TEMA === */
+body.tamna {
+    --bs-body-bg: #1e1c1a;
+    --bs-body-bg-rgb: 30, 28, 26; /* DODATO ZA BG-BODY KLASU */
+    
+    --bs-body-color: #f5efe6;
+    --bs-body-color-rgb: 245, 239, 230; /* DODATO ZA TEKST */
+    
+    --bs-tertiary-bg: #1e1c1a;
+    
+    --bs-primary: #C8863C;
+    --bs-primary-rgb: 200, 134, 60;
+    --bs-primary-hover: #8B5523;
+    
+    --bs-card-bg: #2c2926;
+    --bs-card-border-color: rgba(0, 0, 0, 0.5);
+}
+
+/* tamni rezim input polja */
+body.tamna .form-control {
+    background-color: #2c2926 !important;
+    color: #f5efe6 !important;
+    border-color: #3e3a36 !important;
+}
+
+
+.logo img, .navbar-brand img {
+    height: 3.125rem; /* Koristi rem umesto px da bi se logo povećavao/smanjivao zajedno sa fontom */
+    width: auto;     
+    display: block;
+    max-height: 100%;
+}
+
+/* ==========================================================================
+   TRAJNO UKLANJANJE PLAVE BOJE IZ BOOTSTRAP KLASA 
+   ========================================================================== */
+
+/* Tera Bootstrap klase text-primary i border-primary da budu tvoja, a ne njihova boja */
+.text-primary {
+    color: var(--bs-primary) !important;
+}
+
+.border-primary {
+    border-color: var(--bs-primary) !important;
+}
+
+
+.btn-primary {
+    background-color: var(--bs-primary) !important;
+    border-color: var(--bs-primary) !important;
+    color: #ffffff !important;
+}
+.btn-primary:hover {
+    background-color: var(--bs-primary-hover) !important;
+    border-color: var(--bs-primary-hover) !important;
+}
+
+
+.form-control:focus {
+    border-color: var(--bs-primary) !important;
+    /* Box shadow kreira "sjaj" okolo (halo). rgba koristi --bs-primary-rgb vrednost i opacity 0.25 */
+    box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.25) !important;
+}
+
+
+.form-control::placeholder {
+    color: #6a5a55 !important;
+    opacity: 0.6;
+}
+body.tamna .form-control::placeholder {
+    color: #bfaea8 !important;
+    opacity: 0.5;
+}
+
+
+.custom-hover { transition: color 0.3s ease; }
+.custom-hover:hover { color: var(--bs-primary) !important; }
+
+/* ==========================================================================
+   STILIZACIJA MAPE I INTEGRACIJA SA SVETLOM/TAMNOM TEMOM
+   ========================================================================== */
+.mapa-kontejner {
+    border-radius: var(--radijus, 10px);
+    overflow: hidden;
+    border: 1px solid transparent !important;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.mapa-kontejner iframe {
+    transition: filter 0.3s ease, opacity 0.3s ease !important;
+}
+
+body.svetla .mapa-kontejner {
+    border-color: #e0dcd5 !important;
+}
+
+body.tamna .mapa-kontejner {
+    border-color: #3e3a36 !important;
+}
+
+
+@media (max-width: 600px) {
+    :root {
+        --bazni-font: 14px; 
+    }
+}

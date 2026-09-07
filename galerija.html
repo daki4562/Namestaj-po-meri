@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerija | Nameštaji po meri</title>
+    <meta name="description" content="Galerija i prezentacija realizovanih projekata unikatnog nameštaja po meri. Pogledajte slike modernih kuhinja, stolova, kreveta i stolica.">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="Galerija Radova | Nameštaji po Meri">
+    <meta property="og:description" content="Prelistajte bogat skup završenih projekata i pronađite inspiraciju kroz jedinstvene komade nameštaja modernog dizajna.">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/png" href="slike/logo transparent.png" sizes="512x512">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="svetla">
+
+    <header class="glavni-header">
+        <div class="logo">
+            <a href="index.html">
+                <img src="slike/logo transparent.png" alt="Logo">
+            </a>
+        </div>
+
+    
+        <button id="hamburger" class="hamburger-dugme" aria-expanded="false" aria-label="Meni">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    
+    
+        <nav class="glavna-navigacija" id="nav-stavke">
+            <a href="index.html" id="nav-pocetna">Početna</a>
+            <a href="o-nama.html" id="nav-onama">O nama</a>
+        
+            <div class="dropdown">
+                <a href="#" class="dropbtn" id="nav-namestaj">Nameštaj po meri ▼</a>
+                <div class="dropdown-sadrzaj">
+                    <a href="kuhinje.html" id="nav-kuhinje">Kuhinje</a>                    
+                    <a href="stolovi.html" id="nav-stolovi">Stolovi</a>
+                    <a href="kreveti.html" id="nav-kreveti">Kreveti</a>
+                    <a href="stolice.html" id="nav-stolice">Stolice</a>
+                </div>
+            </div>
+        
+            <a href="kontakt.html" id="nav-kontakt">Kontakt</a>
+            <a href="galerija.html" class="aktivan" id="nav-galerija">Galerija</a>
+        </nav>
+
+        <div class="kontrole">
+            <button onclick="promeniJezik('sr')">SR</button>
+            <button onclick="promeniJezik('en')">EN</button>
+            <button id="prekidac-teme" title="Promeni temu">🌙</button>
+            <button onclick="promeniFont('povecaj')" title="Povećaj font">A+</button>
+            <button onclick="promeniFont('smanji')" title="Smanji font">A-</button>
+            <button onclick="resetujFont()" id="resetuj-font" title="Resetuj veličinu fonta">A</button>
+        </div>
+    </header>
+
+    <main class="sadrzaj-kontejner">
+        <br>
+        <br>
+        <div class="galerija-zaglavlje">
+            <h1 id="galerija-naslov">Završeni Radovi</h1>
+            <p id="galerija-opis">
+                Prelistajte galeriju završenih projekata i pronađite inspiraciju za Vaš savršen kutak.
+            </p>
+        </div>
+        
+        <section class="galerija-kategorija" id="kuhinje">
+            <h2 id="galerija-kuhinje-naslov">Kuhinje po meri</h2>
+            <p class="galerija-kategorija-opis" id="galerija-kuhinje-opis">Spoj funkcionalnosti, lepote i modernog dizajna.</p>
+            
+            <div class="slajder-okvir" id="kategorija-kuhinje">
+                <button class="slajder-strelica slajder-strelica-levo" onclick="pomeriSlajder('kategorija-kuhinje', -1)">&#10094;</button>
+                <div class="slajder-prozor">
+                    <div class="slajder-traka">
+                        <div class="slajd"><img src="slike/Kuhinje/bela kuhinja.webp" alt="Kuhinja 1"></div>
+                        <div class="slajd"><img src="slike/Kuhinje/crna drvena.webp" alt="Kuhinja 2"></div>
+                        <div class="slajd"><img src="slike/Kuhinje/dobar sank.jpg" alt="Kuhinja 3"></div>
+                        <div class="slajd"><img src="slike/Kuhinje/drvena bela 2.jpg" alt="Kuhinja 4"></div>
+                        <div class="slajd"><img src="slike/Kuhinje/drvena bela.jpg" alt="Kuhinja 5"></div>
+                        <div class="slajd"><img src="slike/Kuhinje/kuhinja braon moderna.webp" alt="Kuhinja 6"></div>
+                        <div class="slajd"><img src="slike/Kuhinje/moderna bela barske stolice.jpg" alt="Kuhinja 7"></div>
+                        <div class="slajd"><img src="slike/Kuhinje/moderna bela.webp" alt="Kuhinja 8"></div>
+                        <div class="slajd"><img src="slike/Kuhinje/moderna kuhinja zuta svetla.webp" alt="Kuhinja 9"></div>
+                    </div>
+                </div>
+                <button class="slajder-strelica slajder-strelica-desno" onclick="pomeriSlajder('kategorija-kuhinje', 1)">&#10095;</button>
+            </div>
+        </section>
+
+        <section class="galerija-kategorija" id="stolovi">
+            <h2 id="galerija-stolovi-naslov">Stolovi</h2>
+            <p class="galerija-kategorija-opis" id="galerija-stolovi-opis">Trpezarijski, kancelarijski i baštenski stolovi od masiva i metala.</p>
+            
+            <div class="slajder-okvir" id="kategorija-stolovi">
+                <button class="slajder-strelica slajder-strelica-levo" onclick="pomeriSlajder('kategorija-stolovi', -1)">&#10094;</button>
+                <div class="slajder-prozor">
+                    <div class="slajder-traka">
+                        <div class="slajd"><img src="slike/Stolovi/dugacki drveni kancelarijski.jpg" alt="Sto 1"></div>
+                        <div class="slajd"><img src="slike/Stolovi/random sto.webp" alt="Sto 2"></div>
+                        <div class="slajd"><img src="slike/Stolovi/sank sto.jpg" alt="Sto 3"></div>
+                        <div class="slajd"><img src="slike/Stolovi/sivi moderni stolovi.webp" alt="Sto 4"></div>
+                        <div class="slajd"><img src="slike/Stolovi/moderni sto.jpg" alt="Sto 5"></div>
+                        <div class="slajd"><img src="slike/Stolovi/veliki drveni sto.jpg" alt="Sto 6"></div>
+                        <div class="slajd"><img src="slike/Stolovi/random sto 2.jpg" alt="Sto 7"></div>
+                        <div class="slajd"><img src="slike/Stolovi/stolicic za dnevnu sobu.jpg" alt="Sto 8"></div>
+                        <div class="slajd"><img src="slike/Stolovi/veliki moderni sto.jpg" alt="Sto 9"></div>
+                    </div>
+                </div>
+                <button class="slajder-strelica slajder-strelica-desno" onclick="pomeriSlajder('kategorija-stolovi', 1)">&#10095;</button>
+            </div>
+        </section>
+
+        <section class="galerija-kategorija" id="kreveti">
+            <h2 id="galerija-kreveti-naslov">Kreveti i Ležajevi</h2>
+            <p class="galerija-kategorija-opis" id="galerija-kreveti-opis">Ležajevi, trosedi i zidni kreveti.</p>
+            
+            <div class="slajder-okvir" id="kategorija-kreveti">
+                <button class="slajder-strelica slajder-strelica-levo" onclick="pomeriSlajder('kategorija-kreveti', -1)">&#10094;</button>
+                <div class="slajder-prozor">
+                    <div class="slajder-traka">
+                        <div class="slajd"><img src="slike/Kreveti/beo krevet 2.webp" alt="Krevet 1"></div>
+                        <div class="slajd"><img src="slike/Kreveti/krevet lepi sivi bracni.webp" alt="Krevet 2"></div>
+                        <div class="slajd"><img src="slike/Kreveti/drveni krevet beo.webp" alt="Krevet 3"></div>
+                        <div class="slajd"><img src="slike/Kreveti/naslovna krevet.webp" alt="Krevet 4"></div>
+                        <div class="slajd"><img src="slike/Kreveti/deciji na sprat.webp" alt="Krevet 5"></div>
+                        <div class="slajd"><img src="slike/Kreveti/belo sivi mali.jpeg" alt="Krevet 6"></div>
+                        <div class="slajd"><img src="slike/Kreveti/sivo beli bracni.webp" alt="Krevet 7"></div>
+                        <div class="slajd"><img src="slike/Kreveti/sivi krevet.webp" alt="Krevet 8"></div>
+                        <div class="slajd"><img src="slike/Kreveti/drveni beli.webp" alt="Krevet 9"></div>
+                    </div>
+                </div>
+                <button class="slajder-strelica slajder-strelica-desno" onclick="pomeriSlajder('kategorija-kreveti', 1)">&#10095;</button>
+            </div>
+        </section>
+
+        <section class="galerija-kategorija" id="stolice">
+            <h2 id="galerija-stolice-naslov">Stolice</h2>
+            <p class="galerija-kategorija-opis" id="galerija-stolice-opis">Udobne trpezarijske, barske i izdržljive baštenske stolice.</p>
+            
+            <div class="slajder-okvir" id="kategorija-stolice">
+                <button class="slajder-strelica slajder-strelica-levo" onclick="pomeriSlajder('kategorija-stolice', -1)">&#10094;</button>
+                <div class="slajder-prozor">
+                    <div class="slajder-traka">
+                        <div class="slajd"><img src="slike/Stolice/drvene vise komada.webp" alt="Stolica 1"></div>
+                        <div class="slajd"><img src="slike/Stolice/4 barske.jpg" alt="Stolica 2"></div>
+                        <div class="slajd"><img src="slike/Stolice/4 razlicite stolice.webp" alt="Stolica 3"></div>
+                        <div class="slajd"><img src="slike/Stolice/drvena ljuljajuca.webp" alt="Stolica 4"></div>
+                        <div class="slajd"><img src="slike/Stolice/sive barske.webp" alt="Stolica 5"></div>
+                        <div class="slajd"><img src="slike/Stolice/stolice napolje lepe webp.webp" alt="Stolica 6"></div>
+                        <div class="slajd"><img src="slike/Stolice/royal stil.webp" alt="Stolica 7"></div>
+                        <div class="slajd"><img src="slike/Stolice/lepa drvena zeleno braon.png" alt="Stolica 8"></div>
+                        <div class="slajd"><img src="slike/Stolice/barske drvene.jpg" alt="Stolica 9"></div>
+                    </div>
+                </div>
+                <button class="slajder-strelica slajder-strelica-desno" onclick="pomeriSlajder('kategorija-stolice', 1)">&#10095;</button>
+            </div>
+        </section>
+
+
+        <section class="galerija-kategorija">
+            <h2 id="galerija-video-naslov">Video</h2>
+            <p class="galerija-kategorija-opis" id="galerija-video-opis">Pogledajte primer cele priče. Ovo je primer rezultata koji sledi nakon svakog reza, spoja i detalja nameštaja.</p>
+            <div class="video-okvir">
+                <div class="video-prozor">
+                    <iframe 
+                        src="https://www.youtube.com/embed/eaIopb53EvE" 
+                        title="Nameštaj po meri - Kompletan Rezultat" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; web-share" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+            <br>
+            <div class="video-okvir">
+                <p class="galerija-kategorija-opis" id="galerija-video2-opis">Podgledajte kratak video izrade jednog unikatnog stola</p>
+                <div class="video-prozor">
+                    <video controls width="98%" style="border-radius: 8px; margin-top: 15px;">
+                        <source src="video/izrada_stola.mp4" type="video/mp4">                        
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <div class="download-sekcija">
+            <p class="galerija-kategorija-opis" id="galerija-vodic-naslov">Preuzmite naš edukativni vodič kroz materijale</p>
+            <a href="dokumenti/edukativni_vodic_kroz_materijale.pdf" download class="dugme-proizvod" id="galerija-vodic-dugme">
+                Edukativni vodič kroz materijale (PDF)
+            </a>
+        </div>
+        
+
+    </main>
+
+    <footer class="glavni-footer">
+        <div class="footer-kontejner">
+            <div class="footer-kolona footer-logo-sekcija">
+                <a href="index.html">
+                    <img src="slike/logo transparent.png" alt="Logo">
+                </a>
+            </div>
+        
+            <div class="footer-kolona footer-nav-kolona">
+                <h4 id="footer-navigacija-naslov">Navigacija</h4>
+                <ul>
+                    <li><a href="index.html" id="footer-navigacija-pocetna">Početna</a></li>
+                    <li><a href="o-nama.html" id="footer-navigacija-onama">O nama</a></li>
+                    <li><a href="galerija.html" id="footer-navigacija-galerija">Galerija</a></li>
+                    <li><a href="kontakt.html" id="footer-navigacija-kontakt">Kontakt</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-kolona footer-nav-kolona">
+                <h4 id="footer-asortiman-naslov">Asortiman</h4>
+                <ul>
+                    <li><a href="kuhinje.html" id="footer-asortiman-kuhinje">Kuhinje</a></li>
+                    <li><a href="stolovi.html" id="footer-asortiman-stolovi">Stolovi</a></li>
+                    <li><a href="kreveti.html" id="footer-asortiman-kreveti">Kreveti</a></li>
+                    <li><a href="stolice.html" id="footer-asortiman-stolice">Stolice</a></li>
+                </ul>
+            </div>
+        
+            <div class="footer-kolona">
+                <h4 id="footer-kontakt-naslov">Kontakt Informacije</h4>
+                <ul>                    
+                    <li>
+                        <a href="tel:+381641234567"  id="footer-kontakt-telefon">
+                            📞 Telefon: +381 64 1234567
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:primermaila@gmail.com" id="footer-kontakt-email">
+                            📧 Email: primermaila@gmail.com
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+                        
+    
+    <script src="js/jquery-4.0.0.js"></script>
+    <script src="js/script.js"></script>
+    <button id="nazad-na-vrh" title="Idi na vrh">&#9650;</button>
+</body>
+</html>

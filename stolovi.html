@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stolovi | Nameštaji po meri</title>    
+    
+    <meta name="description" content="Prezentacija unikatnih trpezarijskih i radnih stolova po meri. Pogledajte vrhunska rešenja koja spajaju masivno drvo, stabilne metalne konstrukcije i moderan industrijski dizajn.">
+    <meta name="keywords" content="stolovi po meri, trpezarijski stolovi, stolovi od punog drveta, radni stolovi, industrijski dizajn stolova, stolovi od masiva, nameštaj po meri">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="Stolovi | Nameštaji po meri">
+    <meta property="og:description" content="Unesite toplinu i snagu modernog dizajna u svoj dom. Pogledajte ovu prezentaciju unikatnih stolova za enterijer i eksterijer izvedenih sa vrhunskom preciznošću.">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/png" href="slike/logo transparent.png" sizes="512x512">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="svetla">
+
+    <header class="glavni-header">
+        <div class="logo">
+            <a href="index.html">
+                <img src="slike/logo transparent.png" alt="Logo">
+            </a>
+        </div>
+
+            <button id="hamburger" class="hamburger-dugme" aria-expanded="false" aria-label="Meni">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+    
+            <nav class="glavna-navigacija" id="nav-stavke">
+            <a href="index.html" id="nav-pocetna">Početna</a>
+            <a href="o-nama.html" id="nav-onama">O nama</a>
+        
+            <div class="dropdown">
+                <a href="#" class="dropbtn" id="nav-namestaj">Nameštaj po meri ▼</a>
+                <div class="dropdown-sadrzaj">
+                    <a href="kuhinje.html" id="nav-kuhinje">Kuhinje</a>                    
+                    <a href="stolovi.html" class="aktivan" id="nav-stolovi">Stolovi</a>
+                    <a href="kreveti.html" id="nav-kreveti">Kreveti</a>
+                    <a href="stolice.html" id="nav-stolice">Stolice</a>
+                </div>
+            </div>
+        
+            <a href="kontakt.html" id="nav-kontakt">Kontakt</a>
+            <a href="galerija.html" id="nav-galerija">Galerija</a>
+        </nav>
+
+        <div class="kontrole">
+            <button onclick="promeniJezik('sr')">SR</button>
+            <button onclick="promeniJezik('en')">EN</button>
+            <button id="prekidac-teme" title="Promeni temu">🌙</button>
+            <button onclick="promeniFont('povecaj')" title="Povećaj font">A+</button>
+            <button onclick="promeniFont('smanji')" title="Smanji font">A-</button>
+            <button onclick="resetujFont()" id="resetuj-font" title="Resetuj veličinu fonta">A</button>
+        </div>
+    </header>
+
+
+    <section id="saznaj-vise" class="proizvod-uvod">
+        <h2 class="uvod-naslov" id="stolovi-uvod-naslov">Arhitektura, stabilnost i estetika unikatnih stolova</h2>
+        <p class="uvod-tekst" id="stolovi-uvod-tekst">
+            Sto je centralna tačka svakog okupljanja u domu ili kancelariji. Kroz ovu <strong>prezentaciju radova</strong> prikazujemo stabilne konstrukcije, pažljivo birane teksture drveta i završnu obradu izvedenu sa milimetarskom preciznošću.
+        </p>
+    </section>
+
+    <section class="proizvod-cik-cak-sekcija">
+
+    <div class="proizvod-red">
+        <div class="proizvod-slika-blok">
+            <div class="mini-slajder-kontejner">
+                <div class="mini-slajder-traka">
+                    <img src="slike/Stolovi/crn kancelariski sto.webp" alt="crn kancelariski sto" class="mini-slajd aktivna">
+                    <img src="slike/Stolovi/beo krem sto.webp" alt="beo krem sto" class="mini-slajd">
+                    <img src="slike/Stolovi/moderni radni sto.jpg" alt="moderni radni sto" class="mini-slajd">
+                </div>
+                <button class="slajder-strelica levo" onclick="promeniMiniSlajd(this, -1)">❮</button>
+                <button class="slajder-strelica desno" onclick="promeniMiniSlajd(this, 1)">❯</button>
+            </div>
+        </div>
+        <div class="proizvod-tekst-blok">
+            <span class="proizvod-kategorija-oznaka" id="stolovi-kat1-kategorija">Kategorija: Moderni Minimalizam</span>
+            <h2 id="stolovi-kat1-naslov">Čiste Linije i Geometrijska Simetrija</h2>
+            <p id="stolovi-kat1-tekst">Savršen centralni element za svaku savremenu trpezariju ili radni prostor.
+               Ovi stolovi kombinuju svedene, oštre linije sa vrhunskim materijalima poput mat medijapana, stakla ili tankih metalnih konstrukcija.
+               Dizajnirani sa fokusom na vizuelnu lakoću, unose osećaj prostranosti u enterijer, dok njihova stabilna i čvrsta struktura garantuje dugovečnost i otpornost pri svakodnevnoj upotrebi.</p>              
+        </div>
+    </div>
+
+    <div class="proizvod-red">
+        <div class="proizvod-slika-blok">
+            <div class="mini-slajder-kontejner">
+                <div class="mini-slajder-traka">
+                    <img src="slike/Stolovi/drveni za napolje 2.webp" alt="drveni za napolje 2" class="mini-slajd aktivna">
+                    <img src="slike/Stolovi/sto za napolje.jpg" alt="sto za napolje" class="mini-slajd">
+                    <img src="slike/Stolovi/drveni radni sto napolju.webp" alt="drveni radni sto napolju" class="mini-slajd">
+                </div>
+                <button class="slajder-strelica levo" onclick="promeniMiniSlajd(this, -1)">❮</button>
+                <button class="slajder-strelica desno" onclick="promeniMiniSlajd(this, 1)">❯</button>
+            </div>
+        </div>
+        <div class="proizvod-tekst-blok">
+            <span class="proizvod-kategorija-oznaka" id="stolovi-kat2-kategorija">Kategorija: SAVREMENI EKSTERIJER</span>
+            <h2 id="stolovi-kat2-naslov">Estetika i Izdržljivost</h2>
+            <p id="stolovi-kat2-tekst">Dizajnirani sa ciljem da estetiku unutrašnjih prostorija prenesu na vašu terasu, u dvorište ili pored bazena.
+               Ovi stolovi kombinuju elegantne metalne konstrukcije zaštićene plastifikacijom sa savremenim, visokootpornim materijalima poput HPL ploča ili dekinga.
+               Savršeno se uklapaju u moderne eksterijere, pružajući čist, minimalistički izgled i stopostotnu otpornost na vlagu, sunce i habanje bez potrebe za komplikovanim održavanjem.</p>                
+        </div>
+    </div>
+
+    <div class="proizvod-red">
+        <div class="proizvod-slika-blok">
+            <div class="mini-slajder-kontejner">
+                <div class="mini-slajder-traka">
+                    <img src="slike/Stolovi/drveni crno popunjen.webp" alt="drveni crno popunjen" class="mini-slajd aktivna">
+                    <img src="slike/Stolovi/drveni plavo popunjen.webp" alt="drveni plavo popunjen" class="mini-slajd">
+                    <img src="slike/Stolovi/veliki drveni sto.jpg" alt="veliki drveni sto" class="mini-slajd">
+                </div>
+                <button class="slajder-strelica levo" onclick="promeniMiniSlajd(this, -1)">❮</button>
+                <button class="slajder-strelica desno" onclick="promeniMiniSlajd(this, 1)">❯</button>
+            </div>
+        </div>
+        <div class="proizvod-tekst-blok">
+            <span class="proizvod-kategorija-oznaka" id="stolovi-kat3-kategorija">Kategorija: RUSTIČNI LUKSUZ</span>
+            <h2 id="stolovi-kat3-naslov">Unikatna Tekstura i Snaga Masivnog Drveta</h2>
+            <p id="stolovi-kat3-tekst">Stolovi izrađeni od pažljivo biranih komada masiva koji u dom unose neprolaznu toplinu i direktan dodir sa prirodom.
+               Svaki sto iz ove kolekcije je unikat, zahvaljujući prirodnim šarama, godovima i teksturi drveta koji su naglašeni prirodnim uljima i lakovima.
+               Robustna konstrukcija i masivne forme čine ih dugovečnim komadima nameštaja koji postaju nasleđe i glavno mesto porodičnog okupljanja.</p>
+        </div>
+    </div>
+
+</section>
+
+
+     <section class="proizvod-cik-cak-sekcija">
+     
+    </section>
+
+    <section class="galerija-baner">
+        <div class="galerija-baner-unutrasnji">
+            <h3 class="galerija-baner-naslov" id="stolovi-baner-naslov">Kompletna galerija stolova</h3>
+            <p class="galerija-baner-tekst" id="stolovi-baner-tekst">Pogledajte sve fotografije stolova</p>
+            <a href="galerija.html#stolovi" class="dugme-proizvod dugme-galerija" id="baner-dugme">
+                🔎 Otvori galeriju radova
+            </a>
+        </div>
+    </section>
+
+    <footer class="glavni-footer">
+        <div class="footer-kontejner">
+            <div class="footer-kolona footer-logo-sekcija">
+                <a href="index.html">
+                    <img src="slike/logo transparent.png" alt="Logo">
+                </a>
+            </div>
+        
+            <div class="footer-kolona footer-nav-kolona">
+                <h4 id="footer-navigacija-naslov">Navigacija</h4>
+                <ul>
+                    <li id="footer-navigacija-pocetna"><a href="index.html">Početna</a></li>
+                    <li id="footer-navigacija-onama"><a href="o-nama.html">O nama</a></li>
+                    <li id="footer-navigacija-galerija"><a href="galerija.html">Galerija</a></li>
+                    <li id="footer-navigacija-kontakt"><a href="kontakt.html">Kontakt</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-kolona footer-nav-kolona">
+                <h4 id="footer-asortiman-naslov">Asortiman</h4>
+                <ul>
+                    <li><a href="kuhinje.html" id="footer-asortiman-kuhinje">Kuhinje</a></li>
+                    <li><a href="stolovi.html" id="footer-asortiman-stolovi">Stolovi</a></li>
+                    <li><a href="kreveti.html" id="footer-asortiman-kreveti">Kreveti</a></li>
+                    <li><a href="stolice.html" id="footer-asortiman-stolice">Stolice</a></li>
+                </ul>
+            </div>
+        
+            <div class="footer-kolona">
+                <h4 id="footer-kontakt-naslov">Kontakt Informacije</h4>
+                <ul>                    
+                    <li id="footer-kontakt-telefon">
+                        <a href="tel:+381641234567">
+                            📞 Telefon: +381 64 1234567
+                        </a>
+                    </li>
+                    <li id="footer-kontakt-email">
+                        <a href="mailto:primermaila@gmail.com">
+                            📧 Email: primermaila@gmail.com
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+
+        
+    <script src="js/jquery-4.0.0.js"></script>
+    <script src="js/script.js"></script>
+    <button id="nazad-na-vrh" title="Idi na vrh">&#9650;</button>
+</body>
+</html>

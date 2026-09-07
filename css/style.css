@@ -1,0 +1,976 @@
+/* ============================================================
+   SADRŽAJ STRUKTURE - NAJBOLJA PRAKSA ZA PISANJE CSS-A:
+   0. Font
+   1. CSS VARIJABLE (Koren za teme i boje)
+   2. OSNOVNI RESET (Čišćenje fabričkih margina pregledača)
+   3. HEADER I NAVIGACIJA (Sticky meni)
+   4. pocetna SEKCIJE (Glavni baneri na vrhu stranica)
+   5. KARTICE (Prikaz usluga i asortimana)
+   6. GALERIJA / HORIZONTALNI KARUSEL (Prikaz radova)
+   7. PROIZVODNE STRANICE (Cik-cak raspored)
+   8. MINI SLAJDERI (Prezentacija u proizvodima)
+   9. GLAVNI FOOTER (Podnožje sajta)
+   10. DODATNE KLASE (Izvučeni stilovi sa stranica)
+   11. DUGME NAZAD NA VRH (JQuery)
+   12. RESPONSIVE MEDIA UPITI (@media)
+============================================================ */
+
+/* ============================================================
+   0. Font
+   ============================================================ */
+@font-face {
+    font-family: 'MonsterratBlack';
+    src: url('../font/MontserratBlack-3zOvZ') format('ttf');
+
+}
+
+/* ============================================================
+   1. CSS VARIJABLE I TEME
+   ============================================================ */
+:root {
+    
+    --tranzicija: all 0.3s ease; 
+    --radijus: 10px;             
+    --radijus-mali: 5px;         
+    --senka: 0 5px 15px rgba(0, 0, 0, 0.1);      
+    --senka-jak: 0 10px 20px rgba(0, 0, 0, 0.15); 
+    --font-modifikator: 0px; 
+    --bazni-font: 17px;      
+}
+
+/*Dodavanje fonta na sve elemente.*/
+body, h1, h2, h3, h4, h5, h6, p, a {
+    font-family: 'MonsterratBlack', 'Times New Roman', serif !important;
+}
+
+
+body.svetla {
+    --pozadina: #f9f6f0;
+    --tekst: #2a1208;
+    --header-pozadina: #ffffff;
+    --header-senka: rgba(0,0,0,0.1);
+    --primarna-boja: #8B5523;       
+    --primarna-hover: #C8863C;      
+    --kartica-bg: #ffffff;
+    
+    --boja-pozadina: #ffffff;
+    --boja-pozadina2: #f5efe6;
+    --boja-tekst: #2a1208;
+    --boja-tekst-siva: #6a5a55;
+    --boja-primarna: #8B5523;
+    --boja-tamna: #3D1F0A;
+    --boja-svetla: #F5EFE6;
+    --boja-zlatna: #C8863C;
+    --boja-srednja: #e0dcd5;
+    --boja-bela: #ffffff;
+}
+
+body.tamna {
+    --pozadina: #1e1c1a;
+    --tekst: #f5efe6;
+    --header-pozadina: #2c2926;
+    --header-senka: rgba(0,0,0,0.5);
+    --primarna-boja: #C8863C;       
+    --primarna-hover: #8B5523;
+    --kartica-bg: #2c2926;
+    
+    --boja-pozadina: #2c2926;
+    --boja-pozadina2: #1e1c1a;
+    --boja-tekst: #f5efe6;
+    --boja-tekst-siva: #bfaea8;
+    --boja-primarna: #C8863C;
+    --boja-tamna: #151412;
+    --boja-svetla: #2c2926;
+    --boja-zlatna: #C8A96E;
+    --boja-srednja: #3e3a36;
+    --boja-bela: #ffffff;
+}
+
+/* ============================================================
+   2. OSNOVNI RESET I STRUKTURA STRANICE
+   ============================================================ */
+* {
+    margin: 0;   
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+html{
+    font-size: calc(var(--bazni-font) + var(--font-modifikator)) !important;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background-color: var(--pozadina);
+    color: var(--tekst);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 16px;
+    transition: var(--tranzicija); 
+    line-height: 1.6; 
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+}
+
+main {
+    flex: 1 0 auto; 
+}
+
+/* ============================================================
+   3. HEADER I NAVIGACIJA
+   ============================================================ */
+.glavni-header {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 15px 5%;
+    background-color: var(--header-pozadina);
+    box-shadow: 0 4px 10px var(--header-senka);
+    position: sticky; 
+    top: 0;
+    z-index: 1000; 
+}
+
+.logo {
+    flex: 1; 
+    display: flex;
+    justify-content: flex-start; 
+}
+
+.logo img, 
+.navbar-brand img {
+    display: block;
+    height: 3.125rem;   
+    width: auto;        
+    max-height: 100%;   
+}
+
+.glavna-navigacija {
+    flex: 0 1 auto;
+    display: flex;
+    gap: 25px; 
+    align-items: center;
+    justify-content: center;
+}
+
+.glavna-navigacija a {
+    text-decoration: none; 
+    color: var(--tekst);
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: var(--tranzicija);
+}
+
+.glavna-navigacija a:hover, 
+.glavna-navigacija a.aktivan {
+    color: var(--primarna-boja);
+}
+
+.dropdown {
+    position: relative; 
+    display: inline-block;
+}
+
+.dropdown-sadrzaj {
+    display: none; 
+    position: absolute; 
+    background-color: var(--header-pozadina);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px var(--header-senka);
+    border-radius: 5px;
+    top: 100%; 
+    left: 0;
+    overflow: hidden; 
+}
+
+.dropdown:hover .dropdown-sadrzaj {
+    display: block;
+}
+
+.dropdown-sadrzaj a {
+    display: block; 
+    padding: 12px 16px;
+    font-size: 1rem;
+}
+
+.dropdown-sadrzaj a:hover {
+    background-color: var(--primarna-boja);
+    color: #ffffff;
+}
+
+.kontrole {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end; 
+    gap: 8px; 
+}
+
+.kontrole button {
+    background-color: var(--primarna-boja);
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer; 
+    font-weight: bold;
+    transition: var(--tranzicija);
+}
+
+.kontrole button:hover {
+    background-color: var(--primarna-hover);
+    transform: translateY(-2px); 
+}
+
+/* ============================================================
+   4. pocetna SEKCIJE (Glavni baneri na vrhu stranica)
+   ============================================================ */
+.pocetna-sekcija {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    padding: 60px 5%;
+    max-width: 1300px; 
+    margin: 0 auto; 
+}
+
+.pocetna-tekst {
+    flex: 1; 
+}
+
+.pocetna-tekst h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--primarna-boja);
+}
+
+.pocetna-tekst p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.pocetna-slika {
+    flex: 1; 
+}
+
+.pocetna-slika img {
+    width: 100%; 
+    border-radius: 10px;
+    box-shadow: 0 10px 20px var(--header-senka);
+}
+
+.o-nama-stranica .pocetna-tekst {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.o-nama-pasus {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    text-align: justify; 
+}
+
+.o-nama-stranica .pocetna-slika {
+    margin-top: 3rem;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.o-nama-stranica .pocetna-slika img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; 
+    display: block;
+}
+
+/* ============================================================
+   5. KARTICE (Prikaz glavnih usluga: Kuhinje, Kreveti...)
+   ============================================================ */
+.namestaj-po-meri-kartice-sekcija {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 5%;
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+.namestaj-po-meri-kartice-sekcija h2 {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.kartica {
+    background-color: var(--kartica-bg);
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;          
+    max-width: 350px;     
+    text-align: center;
+    box-shadow: 0 5px 15px var(--header-senka);
+    transition: var(--tranzicija);
+    display: flex;
+    flex-direction: column;
+}
+
+.kartica:hover {
+    transform: translateY(-10px); 
+}
+
+.kartica img {
+    height: 220px;        
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    object-fit: cover;    
+}
+
+.kartica h3 {
+    font-size: 1.4rem;    
+    margin-bottom: 10px;
+}
+
+.kartica p {
+    font-size: 1.05rem;  
+    margin-bottom: 20px;
+}
+
+.link-detaljnije {
+    display: inline-block;
+    color: var(--primarna-boja); 
+    font-weight: bold;
+    text-decoration: none;
+    white-space: nowrap; 
+    padding: 5px 0;      
+    margin-top: auto;     
+    font-size: 1rem;     
+}
+/* ============================================================
+   6. DINAMIČKI MULTI-SLAJDERI (Oni sto prikazuju 3 slike)
+   ============================================================ */
+.galerija-zaglavlje {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+#galerija-naslov { color: var(--primarna-boja); font-size: 2.8rem; margin-bottom: 10px; }
+#galerija-opis { font-size: 1.2rem; max-width: 600px; margin: 0 auto; color: var(--boja-tekst-siva); }
+
+.galerija-kategorija {
+    margin-bottom: 80px;
+    text-align: center;
+    scroll-margin-top: 100px; 
+}
+
+.galerija-kategorija h2 {
+    font-size: 2rem;
+    color: var(--primarna-boja);
+    margin-bottom: 10px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 8px;
+}
+
+.galerija-kategorija h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+    width: 50%;
+    height: 3px;
+    background-color: var(--primarna-hover);
+    border-radius: var(--radijus-mali);
+}
+
+.galerija-kategorija-opis { font-size: 1.05rem; color: var(--boja-tekst-siva); margin-bottom: 30px; }
+
+.slajder-okvir {
+    position: relative;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.slajder-prozor {
+    width: 100%;
+    overflow: hidden; 
+}
+
+.slajder-traka {
+    display: flex;
+    width: 100%;
+    margin: 0 -10px;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+}
+
+.slajd {
+    flex: 0 0 33.3333%;
+    padding: 0 10px; 
+    box-sizing: border-box;
+}
+
+.slajd img {
+    width: 100%;
+    aspect-ratio: 1 / 1; 
+    object-fit: cover;
+    display: block;
+    border-radius: var(--radijus);
+    box-shadow: var(--senka-srednja); 
+    background-color: var(--kartica-bg);
+    transition: var(--tranzicija);
+}
+
+.slajd img:hover {
+    box-shadow: var(--senka-jak);
+    transform: translateY(-2px);
+}
+
+.slajder-strelica {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--tranzicija);
+    backdrop-filter: blur(3px); 
+}
+
+.slajder-strelica:hover {
+    background-color: var(--primarna-boja);
+    scale: 1.1;
+}
+.slajder-strelica-levo { left: -1.2rem; }
+.slajder-strelica-desno { right: 0rem; }
+
+.video-okvir {
+    max-width: 900px;
+    margin: 30px auto 0 auto;
+    width: 100%;
+}
+
+.video-prozor {
+    position: relative;
+    padding-bottom: 56.25%; 
+    height: 0;
+    overflow: hidden;
+    border-radius: var(--radijus, 10px);
+    box-shadow: var(--senka);
+}
+
+.video-prozor iframe {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* ============================================================
+   7. STRANICE PROIZVODA (Kuhinje, Kreveti, Stolovi...)
+   ============================================================ */
+.proizvod-cik-cak-sekcija {
+    padding: 5rem 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem; 
+    background-color: var(--pozadina); 
+}
+
+.proizvod-red {
+    display: flex;
+    align-items: center;
+    max-width: 1200px; 
+    margin: 0 auto 0px auto; 
+    padding: 0 0px; 
+    gap: 100px; 
+}
+
+.proizvod-red:nth-child(even) {
+    flex-direction: row-reverse; 
+}
+
+.proizvod-slika-blok {
+    flex: 1;
+    padding: 15px 25px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.proizvod-slika-blok img {
+    width: 100%;
+    height: 100%;
+    border-radius: var(--radijus);
+    box-shadow: var(--senka);
+    object-fit: cover;
+}
+
+.proizvod-tekst-blok {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.proizvod-tekst-blok h2 { font-size: 1.8rem; color: var(--tekst); margin-bottom: 1rem; }
+.proizvod-tekst-blok p { font-size: 1.05rem; line-height: 1.6; color: var(--tekst); margin-bottom: 1.5rem; }
+
+.dugme-proizvod {
+    display: inline-block;
+    padding: 0.75rem 1.8rem;
+    background-color: var(--primarna-boja);
+    color: #ffffff !important;
+    text-decoration: none;
+    border-radius: var(--radijus-mali);
+    transition: var(--tranzicija);
+    font-weight: bold;
+}
+
+.dugme-proizvod:hover {
+    background-color: var(--primarna-hover);
+    transform: translateY(-2px);
+}
+
+/* ============================================================
+   8. MINI-SLAJDERI (Unutar Cik-Cak blokova)
+   ============================================================ */
+.mini-slajder-kontejner {
+    display: block; 
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: var(--radijus, 8px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+}
+
+.mini-slajder-traka {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 2.9 / 2.2; 
+    background-color: var(--boja-pozadina2);
+}
+
+.mini-slajd {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    opacity: 0; 
+    transition: opacity 0.3s ease-in-out;
+    z-index: 1;
+}
+
+.mini-slajd.aktivna {
+    opacity: 1; 
+    z-index: 2;
+}
+
+.mini-slajder-kontejner .slajder-strelica {
+    background: rgba(0, 0, 0, 0.45);
+    width: 38px;
+    height: 38px;
+}
+.mini-slajder-kontejner .slajder-strelica.levo { left: 12px; }
+.mini-slajder-kontejner .slajder-strelica.desno { right: 12px; }
+
+/* ============================================================
+   9. GLAVNI FOOTER
+   ============================================================ */
+.glavni-footer {
+    background-color: var(--boja-tamna, #3D1F0A);
+    color: #F5EFE6 !important;
+    padding: 40px 20px;
+    border-top: 3px solid var(--boja-primarna, #8B5523);
+    width: 100%;
+    margin-top: 40px;
+}
+
+.footer-kontejner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap; 
+    gap: 30px;
+}
+
+.footer-kolona {
+    flex: 1;
+    min-width: 250px; 
+}
+
+.footer-logo-sekcija img { max-width: 150px; height: auto; }
+
+.footer-kolona h4 {
+    color: var(--boja-zlatna, #C8A96E);
+    margin-bottom: 15px;
+    font-size: 1.15rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-kolona ul {
+    list-style: none; 
+    margin: 0;
+    padding-left: 0;
+}
+
+.footer-kolona ul li { margin-bottom: 10px; font-size: 1.15rem; }
+
+.footer-kolona ul li a {
+    color: #F5EFE6 !important;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-kolona ul li a:hover { color: var(--boja-zlatna, #C8A96E) !important; }
+
+.footer-nav-kolona {
+    flex: 1;
+    min-width: 15.625rem; 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-nav-kolona ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    text-align: left;
+    padding-left: 1.5rem; 
+}
+
+/* ============================================================
+   10. DODATNE KLASE (Izvučeni inline stilovi sa stranica)
+   ============================================================ */
+.proizvod-uvod {
+    padding: 80px 20px;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.uvod-naslov {
+    font-size: 2.2rem;
+    color: var(--primarna-boja);
+    margin-bottom: 20px;
+}
+.uvod-tekst {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--tekst);
+    margin-bottom: 30px;
+}
+.proizvod-kategorija-oznaka {
+    color: var(--primarna-boja);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.galerija-baner {
+    padding: 100px 20px;
+    text-align: center;
+    background: var(--boja-pozadina);
+}
+.galerija-baner-unutrasnji {
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 40px;
+    border: 2px dashed var(--primarna-hover);
+    border-radius: var(--radijus);
+}
+.galerija-baner-naslov {
+    font-size: 1.8rem;
+    color: var(--tekst);
+    margin-bottom: 15px;
+}
+.galerija-baner-tekst {
+    color: var(--boja-tekst-siva);
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+.dugme-galerija {
+    display: inline-block;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.download-sekcija {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* ============================================================
+   11. GLOBALNE KLASE I DUGMIĆI
+   ============================================================ */
+
+/* Prikazivanje padajućeg menija putem JS klase .prikazi */
+.dropdown-sadrzaj.prikazi {
+    display: block !important;
+}
+
+/* Stil za hamburger dugme (Sakriveno na desktopu) */
+#hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+#hamburger span {
+    width: 100%;
+    height: 3px;
+    background-color: var(--tekst);
+    border-radius: 2px;
+    transition: var(--tranzicija);
+}
+
+/* ============================================================
+    11. DUGME NAZAD NA VRH (JQuery)
+   ============================================================ */
+#nazad-na-vrh {
+    display: none; /* Sakriveno u startu, jQuery ga pali */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: var(--primarna-boja, #6a5a55); 
+    color: white;
+    cursor: pointer;
+    padding: 12px 16px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease;
+}
+
+#nazad-na-vrh:hover {
+    transform: scale(1.1);
+}
+
+/* ============================================================
+   12. RESPONSIVE MEDIA UPITI (@media)
+   ============================================================ */
+
+/* Spojen media upit za ekrane do 950px */
+@media (max-width: 950px) {
+    .slajd {
+        flex: 0 0 50%; 
+    }
+    
+    .slajder-strelica.levo { left: 5px; }
+    .slajder-strelica.desno { right: 5px; }
+
+    .glavni-header {
+        flex-direction: column; 
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 15px;
+    }
+    
+    .pocetna-sekcija {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    #hamburger {
+        display: flex; /* Prikazuje dugme na mobilnom */
+    }
+
+    .glavna-navigacija {
+        display: none; /* Sakriva linkove dok se ne klikne hamburger */
+        width: 100%;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        padding-top: 15px;
+        order: 3;
+    }
+
+    .glavna-navigacija.otvoren {
+        display: flex; /* Prikazuje linkove na klik */
+    }
+
+    .kontrole {
+        order: 2;
+    }
+
+    .dropdown {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* sakriva meni kao default */
+    .dropdown-sadrzaj {
+        display: none;
+        position: static;
+        box-shadow: none;
+        background-color: transparent;
+        width: 100%;
+    }
+
+    /* Sprečava mobilni :hover da drži meni otvorenim na dodir */
+    .dropdown:hover .dropdown-sadrzaj {
+        display: none;
+    }
+
+    
+    .dropdown-sadrzaj.prikazi {
+        display: block !important;
+    }
+
+    .dropdown-sadrzaj a {
+        padding: 8px 0;
+        font-size: 1rem;
+    }
+}
+
+/* Neizmenjen media upit za ekrane do 600px */
+@media (max-width: 600px) {
+    :root {
+        --bazni-font: 12px; 
+    }
+
+    .pocetna-sekcija {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        padding: 40px 20px !important; 
+    }
+
+    .pocetna-tekst {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;   
+        text-align: center !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .slajd {
+        flex: 0 0 100%; 
+    }
+    
+    .slajder-okvir .slajder-strelica {
+        width: 32px;
+        height: 32px;
+        font-size: 1.1rem;
+    }
+    
+    .slajder-traka {
+        margin: 0; 
+    }
+
+    .slajder-strelica.levo, 
+    .slajder-strelica-levo { 
+        left: 5px !important; 
+    }
+    
+    .slajder-strelica.desno, 
+    .slajder-strelica-desno { 
+        right: 5px !important; 
+    }
+    
+    .footer-kontejner {
+        flex-direction: column;
+        text-align: center;
+        align-items: center; 
+    }
+    
+    .footer-kolona {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+    }
+    
+    .footer-nav-kolona {
+        align-items: center; 
+        margin-top: 20px;
+    }
+
+    .footer-nav-kolona ul {
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        padding-left: 0; 
+    }
+    
+    .logo, .kontrole {
+        justify-content: center;
+    }
+
+    .proizvod-red, .proizvod-red:nth-child(even) {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .proizvod-tekst-blok {
+        order: 2; 
+        align-items: center;
+        text-align: center;
+        margin-bottom: 25px; 
+    }
+
+    .proizvod-slika-blok {
+        order: 1; 
+        width: 100%;
+        padding: 0; 
+    }
+
+    .mini-slajder-kontejner {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .mini-slajder-traka {
+        width: 100%;
+        min-height: 250px; 
+        height: 65vw; 
+        max-height: 350px;
+        aspect-ratio: auto; 
+    }
+}

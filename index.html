@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Početna | Nameštaji po meri </title>
+    <meta name="description" content="Prezentacija realizovanih projekata i unikatnog nameštaja po meri. Pogledajte portfolio vrhunski dizajniranih kuhinja, stolova, kreveta i stolica.">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="Prezentacija Nameštaja po Meri">
+    <meta property="og:description" content="Pregled vrhunski dizajniranih komada nameštaja po meri. Spoj kvalitetnih materijala i modernog dizajna kroz jedinstven portfolio realizovanih projekata.">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/png" href="slike/logo transparent.png" sizes="512x512">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="svetla">
+
+     <header class="glavni-header">
+        <div class="logo">
+            <a href="index.html">
+                <img src="slike/logo transparent.png" alt="Logo">
+            </a>
+        </div>
+
+    
+        <button id="hamburger" class="hamburger-dugme" aria-expanded="false" aria-label="Meni">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    
+    
+        <nav class="glavna-navigacija" id="nav-stavke">
+            <a href="index.html" class="aktivan" id="nav-pocetna">Početna</a>
+            <a href="o-nama.html" id="nav-onama">O nama</a>
+        
+            <div class="dropdown">
+                <a href="#" class="dropbtn" id="nav-namestaj">Nameštaj po meri ▼</a>
+                <div class="dropdown-sadrzaj">
+                    <a href="kuhinje.html" id="nav-kuhinje">Kuhinje</a>                    
+                    <a href="stolovi.html" id="nav-stolovi">Stolovi</a>
+                    <a href="kreveti.html" id="nav-kreveti">Kreveti</a>
+                    <a href="stolice.html" id="nav-stolice">Stolice</a>
+                </div>
+            </div>
+        
+            <a href="kontakt.html" id="nav-kontakt">Kontakt</a>
+            <a href="galerija.html" id="nav-galerija">Galerija</a>
+        </nav>
+
+        <div class="kontrole">
+            <button onclick="promeniJezik('sr')">SR</button>
+            <button onclick="promeniJezik('en')">EN</button>
+            <button id="prekidac-teme" title="Promeni temu">🌙</button>
+            <button onclick="promeniFont('povecaj')" title="Povećaj font">A+</button>
+            <button onclick="promeniFont('smanji')" title="Smanji font">A-</button>
+            <button onclick="resetujFont()" id="resetuj-font" title="Resetuj veličinu fonta">A</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="pocetna-sekcija">
+            <div class="pocetna-tekst">
+                <h1 id="naslov-glavni">Nameštaj po meri</h1>
+                <p id="tekst-glavna-stranica">Dobrodošli na prezentaciju realizovanih projekata nameštaja po meri.
+                    Ovaj portfolio prikazuje spoj vrhunskih materijala, savremenog dizajna i maksimalne funkcionalnosti kroz
+                    jedinstvena rešenja za kuhinje, krevete, stolove i stolice, projektovani da se savršeno uklope u svaki enterijer.</p>
+
+                <div class="pocetna-slika">
+                    <img src="slike/overall naslovna.webp" alt="Naslovna slika">
+                </div>
+            </div>            
+        </section>
+
+        <section class="namestaj-po-meri-kartice-sekcija">
+            <h2 id="namestaj-po-meri-naslov">Nameštaj po meri</h2>
+            
+            <div class="kartica">
+                <img src="slike/Kuhinje/naslovna.webp" alt="Kuhinja-kartica-naslovna">
+                <h3 id="naslov-kartica-kuhinje">Kuhinje</h3>
+                <p id="tekst-kartica-kuhinje">Prefinjena elegancija i besprekorne površine koje unose vizuelnu harmoniju i luksuz u vaš kulinarski prostor.</p>
+                <a href="kuhinje.html" class="link-detaljnije" id="saznaj-vise-tekst-dugme-kuhinje">Saznaj više ➔</a>
+            </div>
+
+            <div class="kartica">
+                <img src="slike/Stolovi/naslovna.webp" alt="Sto-kartica-naslovna">
+                <h3 id="naslov-kartica-stolovi">Stolovi</h3>
+                <p id="tekst-kartica-stolovi">Unikatni i elegantni komadi koji postaju vizuelni centar i ukras svakog okupljanja.</p>
+                <a href="stolovi.html" class="link-detaljnije" id="saznaj-vise-tekst-dugme-stolovi">Saznaj više ➔</a>
+            </div>
+
+            <div class="kartica">
+                <img src="slike/Kreveti/naslovna krevet.webp" alt="Krevet-kartica-naslovna">
+                <h3 id="naslov-kartica-kreveti">Kreveti</h3>
+                <p id="tekst-kartica-kreveti">Luksuzan izgled i sofisticiran dizajn koji spavaću sobu pretvara u elegantan prizor stila.</p>
+                <a href="kreveti.html" class="link-detaljnije" id="saznaj-vise-tekst-dugme-kreveti">Saznaj više ➔</a>
+            </div>
+
+            <div class="kartica">
+                <img src="slike/Stolice/naslovna.webp" alt="Stolica-kartica-naslovna">
+                <h3 id="naslov-kartica-stolice">Stolice</h3>
+                <p id="tekst-kartica-stolice">Lepota i prefinjene siluete koje unose sofisticiranost i umetnički pečat u vaš odmarajući prostor.</p>
+                <a href="stolice.html" class="link-detaljnije" id="saznaj-vise-tekst-dugme-stolice">Saznaj više ➔</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="glavni-footer">
+        <div class="footer-kontejner">
+            <div class="footer-kolona footer-logo-sekcija">
+                <a href="index.html">
+                    <img src="slike/logo transparent.png" alt="Logo">
+                </a>
+            </div>
+        
+            <div class="footer-kolona footer-nav-kolona">
+                <h4 id="footer-navigacija-naslov">Navigacija</h4>
+                <ul>
+                    <li><a href="index.html" id="footer-navigacija-pocetna">Početna</a></li>
+                    <li><a href="o-nama.html" id="footer-navigacija-onama">O nama</a></li>
+                    <li><a href="galerija.html" id="footer-navigacija-galerija">Galerija</a></li>
+                    <li><a href="kontakt.html" id="footer-navigacija-kontakt">Kontakt</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-kolona footer-nav-kolona">
+                <h4 id="footer-asortiman-naslov">Asortiman</h4>
+                <ul>
+                    <li><a href="kuhinje.html" id="footer-asortiman-kuhinje">Kuhinje</a></li>
+                    <li><a href="stolovi.html" id="footer-asortiman-stolovi">Stolovi</a></li>
+                    <li><a href="kreveti.html" id="footer-asortiman-kreveti">Kreveti</a></li>
+                    <li><a href="stolice.html" id="footer-asortiman-stolice">Stolice</a></li>
+                </ul>
+            </div>
+        
+            <div class="footer-kolona">
+                <h4 id="footer-kontakt-naslov">Kontakt Informacije</h4>
+                <ul>                    
+                    <li>
+                        <a href="tel:+381641234567"  id="footer-kontakt-telefon">
+                            📞 Telefon: +381 64 1234567
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:primermaila@gmail.com" id="footer-kontakt-email">
+                            📧 Email: primermaila@gmail.com
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="js/jquery-4.0.0.js"></script>
+    <script src="js/script.js"></script>
+    <button id="nazad-na-vrh" title="Idi na vrh">&#9650;</button>
+</body>
+</html>

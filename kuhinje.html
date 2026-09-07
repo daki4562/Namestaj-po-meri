@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuhinje | Nameštaji po meri</title>    
+    
+    <meta name="description" content="Prezentacija unikatnih kuhinja po meri. Pogledajte moderna, funkcionalna i estetska rešenja izvedena sa vrhunskom preciznošću.">
+    <meta name="keywords" content="kuhinje po meri, moderne kuhinje, dizajn kuhinje, kuhinje od medijapana, unikatne kuhinje, dvobojne kuhinje, namještaj po mjeri">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="Kuhinje | Nameštaji po meri">
+    <meta property="og:description" content="Pregledajte prezentaciju modernih kuhinja čistog minimalizma, dvobojnih kontrasta i rustičnih tekstura prilagođenih svakom prostoru.">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/png" href="slike/logo transparent.png" sizes="512x512">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="svetla">
+    
+    <header class="glavni-header">
+        <div class="logo">
+            <a href="index.html">
+                <img src="slike/logo transparent.png" alt="Logo">
+            </a>
+        </div>
+
+            <button id="hamburger" class="hamburger-dugme" aria-expanded="false" aria-label="Meni">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+    
+            <nav class="glavna-navigacija" id="nav-stavke">
+            <a href="index.html" id="nav-pocetna">Početna</a>
+            <a href="o-nama.html" id="nav-onama">O nama</a>
+        
+            <div class="dropdown">
+                <a href="#" class="dropbtn" id="nav-namestaj">Nameštaj po meri ▼</a>
+                <div class="dropdown-sadrzaj">
+                    <a href="kuhinje.html" class="aktivan" id="nav-kuhinje">Kuhinje</a>                    
+                    <a href="stolovi.html" id="nav-stolovi">Stolovi</a>
+                    <a href="kreveti.html" id="nav-kreveti">Kreveti</a>
+                    <a href="stolice.html" id="nav-stolice">Stolice</a>
+                </div>
+            </div>
+        
+            <a href="kontakt.html" id="nav-kontakt">Kontakt</a>
+            <a href="galerija.html" id="nav-galerija">Galerija</a>
+        </nav>
+
+        <div class="kontrole">
+            <button onclick="promeniJezik('sr')">SR</button>
+            <button onclick="promeniJezik('en')">EN</button>
+            <button id="prekidac-teme" title="Promeni temu">🌙</button>
+            <button onclick="promeniFont('povecaj')" title="Povećaj font">A+</button>
+            <button onclick="promeniFont('smanji')" title="Smanji font">A-</button>
+            <button onclick="resetujFont()" id="resetuj-font" title="Resetuj veličinu fonta">A</button>
+        </div>
+    </header>
+
+    <section id="saznaj-vise" class="proizvod-uvod">
+       <h2 class="uvod-naslov" id="kuhinje-uvod-naslov">Ergonomija i arhitektura savremene kuhinje</h2>
+        <p class="uvod-tekst" id="kuhinje-uvod-tekst">
+            Kuhinja je najkompleksniji element svakog enterijera jer zahtijeva besprekornu koordinaciju instalacija sa samim namještajem. Kroz ovu prezentaciju radova prikazujemo projekte izvedene sa milimetarskom preciznošću.
+        </p>
+    </section>
+
+   <section class="proizvod-cik-cak-sekcija">
+
+    <div class="proizvod-red">
+        <div class="proizvod-slika-blok">
+            <div class="mini-slajder-kontejner">
+                <div class="mini-slajder-traka">
+                    <img src="slike/Kuhinje/moderna bela.webp" alt="kuhinja moderna bela" class="mini-slajd aktivna">
+                    <img src="slike/Kuhinje/moderna kuhinja zuta svetla.webp" alt="kuhinja moderna bela 2" class="mini-slajd">
+                    <img src="slike/Kuhinje/moderna belo crna.webp" alt="kuhinja moderna belo crna" class="mini-slajd">
+                </div>
+                <button class="slajder-strelica levo" onclick="promeniMiniSlajd(this, -1)">❮</button>
+                <button class="slajder-strelica desno" onclick="promeniMiniSlajd(this, 1)">❯</button>
+            </div>
+        </div>
+        <div class="proizvod-tekst-blok">
+            <span class="proizvod-kategorija-oznaka" id="kuhinje-kat1-kategorija">Kategorija: Moderni Minimalizam</span>
+            <h2 id="kuhinje-kat1-naslov">Harmonija Forme i Čistog Minimalizma</h2>
+            <p id="kuhinje-kat1-tekst">Savršen spoj estetike i funkcionalnosti prilagođen savremenom načinu života. 
+               Moderne kuhinje odlikuju se čistim pravim linijama, vrhunskom završnom obradom od kvalitetnih materijala i pametnim rasporedom koji maksimalno koristi svaki centimetar prostora.
+               Elegantan i sveden dizajn bez napora se uklapa u svaki enterijer, dok napredni skriveni mehanizmi i prostrane radne površine pružaju vrhunski komfor i dugotrajnost pri svakodnevnoj upotrebi.</p>              
+        </div>
+    </div>
+
+    <div class="proizvod-red">
+        <div class="proizvod-slika-blok">
+            <div class="mini-slajder-kontejner">
+                <div class="mini-slajder-traka">
+                    <img src="slike/Kuhinje/bela kuhinja.webp" alt="kuhinja belo crna" class="mini-slajd aktivna">
+                    <img src="slike/Kuhinje/moderna bela barske stolice.jpg" alt="kuhinja moderna bela barske stolice" class="mini-slajd">
+                    <img src="slike/Kuhinje/kuhinja braon moderna.webp" alt="kuhinja moderna braon" class="mini-slajd">
+                </div>
+                <button class="slajder-strelica levo" onclick="promeniMiniSlajd(this, -1)">❮</button>
+                <button class="slajder-strelica desno" onclick="promeniMiniSlajd(this, 1)">❯</button>
+            </div>
+        </div>
+        <div class="proizvod-tekst-blok">
+            <span class="proizvod-kategorija-oznaka" id="kuhinje-kat2-kategorija">Kategorija: SAVREMENI URBANI DIZAJN</span>
+            <h2 id="kuhinje-kat2-naslov">Dvobojni Kontrast</h2>
+            <p id="kuhinje-kat2-tekst">Projektovane za moderne prostore gde kuhinja čini koherentnu celinu sa dnevnim boravkom.
+               Pametnim kombinovanjem snežno belih gornjih elemenata (koji vizuelno otvaraju i produžavaju prostor) i kontrastnih donjih frontova, postignut je snažan arhitektonski balans.
+               Ovakav koncept otvorenog plana ne samo da maksimizuje radnu površinu, već stvara prirodnu, elegantnu tranziciju između zone za pripremu hrane i zone za opuštanje.</p>                
+        </div>
+    </div>
+
+    <div class="proizvod-red">
+        <div class="proizvod-slika-blok">
+            <div class="mini-slajder-kontejner">
+                <div class="mini-slajder-traka">
+                    <img src="slike/Kuhinje/zelena kuhinja.webp" alt="kuhinja drvena zelena" class="mini-slajd aktivna">
+                    <img src="slike/Kuhinje/drvena bela.jpg" alt="kuhinja drvena bela" class="mini-slajd">
+                    <img src="slike/Kuhinje/drvena braon.jpg" alt="kuhinja drvena braon" class="mini-slajd">
+                </div>
+                <button class="slajder-strelica levo" onclick="promeniMiniSlajd(this, -1)">❮</button>
+                <button class="slajder-strelica desno" onclick="promeniMiniSlajd(this, 1)">❯</button>
+            </div>
+        </div>
+        <div class="proizvod-tekst-blok">
+            <span class="proizvod-kategorija-oznaka" id="kuhinje-kat3-kategorija">Kategorija: RUSTIČNI MINIMALIZAM</span>
+            <h2 id="kuhinje-kat3-naslov">Prirodni Tonovi u Zagrljaju Organskih Tekstura</h2>
+            <p id="kuhinje-kat3-tekst">Inspirisana prirodom i toplinom organskih materijala, ova kuhinja donosi mir i neprolazni šarm u vaš dom.
+               Pažljivo odabrani frontovi sa izraženom teksturom unose bogatstvo prirodnih elemenata, stvarajući savršen balans sa svedenim i modernim rasporedom.
+            Linearne forme omogućavaju samom materijalu da u potpunosti dođe do izražaja, dok najsavremeniji skriveni okovi i mehanizmi pružaju maksimalan komfor bez narušavanja tople, autentične estetike.</p>
+        </div>
+    </div>
+
+</section>
+
+
+     <section class="proizvod-cik-cak-sekcija">
+     
+    </section>
+
+    <section class="galerija-baner">
+    <div class="galerija-baner-unutrasnji">
+        <h3 class="galerija-baner-naslov" id="kuhinje-baner-naslov">Kompletna galerija kreveta</h3>
+        <p class="galerija-baner-tekst" id="kuhinje-baner-tekst">Pogledajte sve fotografije kreveta.</p>
+        <a href="galerija.html#kuhinje" class="dugme-proizvod dugme-galerija" id="baner-dugme">
+            🔎 Otvori galeriju radova
+        </a>
+    </div>
+    </section>
+
+    <footer class="glavni-footer">
+        <div class="footer-kontejner">
+            <div class="footer-kolona footer-logo-sekcija">
+                <a href="index.html">
+                    <img src="slike/logo transparent.png" alt="Logo">
+                </a>
+            </div>
+        
+            <div class="footer-kolona footer-nav-kolona">
+                <h4 id="footer-navigacija-naslov">Navigacija</h4>
+                <ul>
+                    <li><a href="index.html" id="footer-navigacija-pocetna">Početna</a></li>
+                    <li><a href="o-nama.html" id="footer-navigacija-onama">O nama</a></li>
+                    <li><a href="galerija.html" id="footer-navigacija-galerija">Galerija</a></li>
+                    <li><a href="kontakt.html" id="footer-navigacija-kontakt">Kontakt</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-kolona footer-nav-kolona">
+                <h4 id="footer-asortiman-naslov">Asortiman</h4>
+                <ul>
+                    <li><a href="kuhinje.html" id="footer-asortiman-kuhinje">Kuhinje</a></li>
+                    <li><a href="stolovi.html" id="footer-asortiman-stolovi">Stolovi</a></li>
+                    <li><a href="kreveti.html" id="footer-asortiman-kreveti">Kreveti</a></li>
+                    <li><a href="stolice.html" id="footer-asortiman-stolice">Stolice</a></li>
+                </ul>
+            </div>
+        
+            <div class="footer-kolona">
+                <h4 id="footer-kontakt-naslov">Kontakt Informacije</h4>
+                <ul>                    
+                    <li>
+                        <a href="tel:+381641234567"  id="footer-kontakt-telefon">
+                            📞 Telefon: +381 64 1234567
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:primermaila@gmail.com" id="footer-kontakt-email">
+                            📧 Email: primermaila@gmail.com
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+        
+    <script src="js/jquery-4.0.0.js"></script>
+    <script src="js/script.js"></script>
+    <button id="nazad-na-vrh" title="Idi na vrh">&#9650;</button>
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt | Nameštaj po meri</title>    
+    
+    <meta name="description" content="Kontaktirajte nas za izradu unikatnog nameštaja po meri.">
+    <meta name="keywords" content="kontakt, nameštaj po meri, informacije">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" type="image/png" href="slike/logo transparent.png" sizes="512x512">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/kontakt.css">
+</head>
+<body>
+
+    <header class="navbar navbar-expand-lg border-bottom shadow-sm bg-body">
+        <div class="container">
+            <a class="navbar-brand m-0 p-0" href="index.html">
+                <img src="slike/logo transparent.png" alt="Logo">
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#glavnaNavigacija">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-between" id="glavnaNavigacija">
+                <nav class="navbar-nav mx-auto gap-2 text-center">
+                    <a class="nav-link text-body-secondary fw-semibold" href="index.html" id="nav-pocetna">Početna</a>
+                    <a class="nav-link text-body-secondary fw-semibold" href="o-nama.html" id="nav-onama">O nama</a>
+                    
+                    <div class="nav-item dropdown">
+                        <a class="nav-link text-body-secondary fw-semibold" href="#" id="nav-namestaj" data-bs-toggle="dropdown">
+                            Nameštaj po meri ▼
+                        </a>
+                        <ul class="dropdown-menu border-0 shadow-sm text-center text-lg-start">
+                            <li><a class="dropdown-item" href="kuhinje.html" id="nav-kuhinje">Kuhinje</a></li>
+                            <li><a class="dropdown-item" href="stolovi.html" id="nav-stolovi">Stolovi</a></li>
+                            <li><a class="dropdown-item" href="kreveti.html" id="nav-kreveti">Kreveti</a></li>
+                            <li><a class="dropdown-item" href="stolice.html" id="nav-stolice">Stolice</a></li>
+                        </ul>
+                    </div>
+                    
+                    <a class="nav-link text-body fw-bold border-bottom border-2 border-primary" href="kontakt.html" id="nav-kontakt">Kontakt</a>
+                    <a class="nav-link text-body-secondary fw-semibold" href="galerija.html" id="nav-galerija">Galerija</a>
+                </nav>
+
+                <div class="d-flex flex-wrap justify-content-center gap-1 mt-3 mt-lg-0">
+                    <button class="btn btn-sm btn-outline-secondary fw-bold px-2" onclick="promeniJezik('sr')">SR</button>
+                    <button class="btn btn-sm btn-outline-secondary fw-bold px-2" onclick="promeniJezik('en')">EN</button>
+                    <button class="btn btn-sm btn-outline-secondary" id="prekidac-teme" title="Promeni temu">🌙</button>
+                    <button class="btn btn-sm btn-outline-secondary fw-bold" onclick="promeniFont('povecaj')">A+</button>
+                    <button class="btn btn-sm btn-outline-secondary fw-bold" onclick="promeniFont('smanji')">A-</button>
+                    <button class="btn btn-sm btn-outline-secondary fw-bold" onclick="resetujFont()" id="resetuj-font">A</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container my-5">
+        
+        <section class="text-center mb-5 p-4 bg-body rounded shadow-sm border">
+            <h1 class="display-5 fw-bold mb-3 text-primary" id="kontakt-naslov">Uvek dostupni za vaše ideje</h1>
+            <p class="lead mx-auto text-body-secondary" style="max-width: 700px;" id="kontakt-tekst">
+                Imate viziju savršenog stola, kuhinje ili unikatnog detalja za vaš enterijer? Popunite našu 
+                <strong>kontakt formu</strong> ispod, ostavite osnovne podatke i opišite vašu zamisao.
+            </p>
+        </section>
+
+        <div class="row g-4 justify-content-center">
+            <div class="col-lg-8">
+                <div class="card border shadow-sm p-4 bg-body">
+                    <h3 class="mb-4 fw-bold text-primary" id="kontakt-forma-naslov">Pošaljite nam upit</h3>
+                    
+                    <form id="kontaktForma" class="needs-validation" novalidate>
+                        <div class="row g-3">
+                            
+                            <div class="col-md-6">
+                                <label for="unosIme" class="form-label fw-semibold" id="label-ime">Ime</label>
+                                <input type="text" class="form-control" id="unosIme" placeholder="Npr. Marko" required minlength="2">
+                                <div class="invalid-feedback" id="GreskaIme">Ime je obavezno i ne sme da sadrži brojeve.</div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="unosPrezime" class="form-label fw-semibold" id="label-prezime">Prezime</label>
+                                <input type="text" class="form-control" id="unosPrezime" placeholder="Npr. Marković" required minlength="2">
+                                <div class="invalid-feedback" id="GreskaPrezime">Prezime je obavezno i ne sme da sadrži brojeve.</div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="unosEmail" class="form-label fw-semibold" id="label-email">Email adresa</label>
+                                <input type="email" class="form-control" id="unosEmail" placeholder="ime@primer.com" required>
+                                <div class="invalid-feedback" id="GreskaEmail">Unesite validnu email adresu (npr. ime@primer.com).</div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="unosTelefon" class="form-label fw-semibold" id="label-telefon">Broj telefona</label>
+                                <input type="text" class="form-control" id="unosTelefon" placeholder="Npr. +381641234567" required>
+                                <div class="invalid-feedback" id="GreskaTelefon">Unesite ispravan broj telefona (minimum 6 cifara).</div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <label for="unosPoruka" class="form-label fw-semibold" id="label-poruka">Vaša poruka / Ideja</label>
+                                <textarea class="form-control" id="unosPoruka" rows="5" placeholder="Opišite šta želite da napravimo..." required minlength="10"></textarea>
+                                <div class="invalid-feedback" id="GreskaPoruka">Napišite poruku (minimum 10 karaktera).</div>
+                            </div>
+                        
+                            <div class="col-md-12">
+                                <button type="submit" class="btn btn-primary w-100 fw-bold py-2" id="kontakt-dugme">
+                                    🚀 Pošalji poruku
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                
+            </div> 
+        </div>
+    <div class="row mt-5">
+        <div class="col-12">
+            <div class="p-4 bg-body rounded shadow-sm border">
+                <h4 class="text-primary mb-3 fw-bold" id="mapa-naslov">Pošaljite Vaše slike</h4>
+                <p class="text-body-secondary" id="mapa-tekst">Možete poslati slike vaših radova na ovu adresu</p>
+            
+                <div class="ratio ratio-21x9 mapa-kontejner"> 
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d700.4381100707548!2d20.372544169659605!3d45.3941644399502!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475adb0810eb1f51%3A0x6308cc4bda575db3!2sKara%C4%91or%C4%91eva%C4%8Dko-Aleksandrova%C4%8Dkog%20Odreda%201%2C%20Zrenjanin!5e0!3m2!1sen!2srs!4v1782921827410!5m2!1sen!2srs"
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="strict-origin-when-cross-origin">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+    
+
+    <footer class="bg-body border-top py-5 mt-5">
+    <div class="container">
+        <div class="row g-4 text-center text-md-start">
+            
+            <div class="col-md-3 d-flex flex-column align-items-center align-items-md-start">
+                <a href="index.html" class="mb-3 text-decoration-none">
+                    <img src="slike/logo transparent.png" alt="Logo" style="height: 3.125rem;">
+                </a>
+            </div>
+
+            <div class="col-md-3">
+                <h5 class="fw-bold text-primary mb-3" id="footer-navigacija-naslov">Navigacija</h5>
+                <ul class="list-unstyled d-flex flex-column gap-2">
+                    <li><a href="index.html" class="text-body-secondary text-decoration-none custom-hover" id="footer-navigacija-pocetna">Početna</a></li>
+                    <li><a href="o-nama.html" class="text-body-secondary text-decoration-none custom-hover" id="footer-navigacija-onama">O nama</a></li>
+                    <li><a href="galerija.html" class="text-body-secondary text-decoration-none custom-hover" id="footer-navigacija-galerija">Galerija</a></li>
+                    <li><a href="kontakt.html" class="text-body-secondary text-decoration-none custom-hover" id="footer-navigacija-kontakt">Kontakt</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-3">
+                <h5 class="fw-bold text-primary mb-3" id="footer-asortiman-naslov">Asortiman</h5>
+                <ul class="list-unstyled d-flex flex-column gap-2">
+                    <li><a href="kuhinje.html" class="text-body-secondary text-decoration-none custom-hover" id="footer-asortiman-kuhinje">Kuhinje</a></li>
+                    <li><a href="stolovi.html" class="text-body-secondary text-decoration-none custom-hover" id="footer-asortiman-stolovi">Stolovi</a></li>
+                    <li><a href="kreveti.html" class="text-body-secondary text-decoration-none custom-hover" id="footer-asortiman-kreveti">Kreveti</a></li>
+                    <li><a href="stolice.html" class="text-body-secondary text-decoration-none custom-hover" id="footer-asortiman-stolice">Stolice</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-3">
+                <h5 class="fw-bold text-primary mb-3" id="footer-kontakt-naslov">Kontakt Informacije</h5>
+                <ul class="list-unstyled d-flex flex-column gap-2">
+                    <li>
+                        <a href="tel:+381641234567" class="text-body-secondary text-decoration-none custom-hover" id="footer-kontakt-telefon">
+                            📞 Telefon: +381 64 1234567
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:primermaila@gmail.com" class="text-body-secondary text-decoration-none custom-hover" id="footer-kontakt-email">
+                            📧 Email: primermaila@gmail.com
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+        
+    <script src="js/jquery-4.0.0.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/kontakt.js"></script>
+    <button id="nazad-na-vrh" title="Idi na vrh">&#9650;</button>
+</body>
+</html>

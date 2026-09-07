@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stolice | Nameštaji po meri</title>    
+    
+    <meta name="description" content="Prezentacija unikatnih i dizajniranih stolica po meri. Pogledajte moderne trpezarijske, udobne barske stolice i izdržljive modele za eksterijer.">
+    <meta name="keywords" content="stolice po meri, trpezarijske stolice, barske stolice, stolice za eksterijer, baštenske stolice, tapacirane stolice, nameštaj po meri">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="Stolice | Nameštaji po meri">
+    <meta property="og:description" content="Pronađite savršen spoj vrhunske ergonomije, autentičnog dizajna i maksimalne izdržljivosti. Pogledajte ovu prezentaciju stolica za unutrašnje i spoljašnje prostore.">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/png" href="slike/logo transparent.png" sizes="512x512">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="svetla">
+
+    <header class="glavni-header">
+        <div class="logo">
+            <a href="index.html">
+                <img src="slike/logo transparent.png" alt="Logo">
+            </a>
+        </div>
+
+            <button id="hamburger" class="hamburger-dugme" aria-expanded="false" aria-label="Meni">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+    
+            <nav class="glavna-navigacija" id="nav-stavke">
+            <a href="index.html" id="nav-pocetna">Početna</a>
+            <a href="o-nama.html" id="nav-onama">O nama</a>
+        
+            <div class="dropdown">
+                <a href="#" class="dropbtn" id="nav-namestaj">Nameštaj po meri ▼</a>
+                <div class="dropdown-sadrzaj">
+                    <a href="kuhinje.html" id="nav-kuhinje">Kuhinje</a>                    
+                    <a href="stolovi.html" id="nav-stolovi">Stolovi</a>
+                    <a href="kreveti.html" id="nav-kreveti">Kreveti</a>
+                    <a href="stolice.html" class="aktivan" id="nav-stolice">Stolice</a>
+                </div>
+            </div>
+        
+            <a href="kontakt.html" id="nav-kontakt">Kontakt</a>
+            <a href="galerija.html" id="nav-galerija">Galerija</a>
+        </nav>
+
+        <div class="kontrole">
+            <button onclick="promeniJezik('sr')">SR</button>
+            <button onclick="promeniJezik('en')">EN</button>
+            <button id="prekidac-teme" title="Promeni temu">🌙</button>
+            <button onclick="promeniFont('povecaj')" title="Povećaj font">A+</button>
+            <button onclick="promeniFont('smanji')" title="Smanji font">A-</button>
+            <button onclick="resetujFont()" id="resetuj-font" title="Resetuj veličinu fonta">A</button>
+        </div>
+    </header>
+
+    <section id="saznaj-vise" class="proizvod-uvod">
+        <h2 class="uvod-naslov" id="stolice-uvod-naslov">Anatomija i dugotrajnost udobnog sedenja</h2>
+        <p class="uvod-tekst" id="stolice-uvod-tekst">
+            Stolica trpi najveće dinamičko opterećenje od svih elemenata u enterijeru. Kroz ovu <strong>prezentaciju radova</strong> prikazujemo modele sa vrhunskim i zanimljivim skeletom i vrhunskim poliuretanskim punjenjem za maksimalnu izdržljivost.
+        </p>
+    </section>
+
+    <section class="proizvod-cik-cak-sekcija">
+
+    <div class="proizvod-red">
+        <div class="proizvod-slika-blok">
+            <div class="mini-slajder-kontejner">
+                <div class="mini-slajder-traka">
+                    <img src="slike/Stolice/lepe stolice i sto.webp" alt="lepe stolice i sto" class="mini-slajd aktivna">
+                    <img src="slike/Stolice/zlatne stolice.jpg" alt="zlatne stolice" class="mini-slajd">
+                    <img src="slike/Stolice/moderne sive 3.jpg" alt="moderne sive 3" class="mini-slajd">
+                </div>
+                <button class="slajder-strelica levo" onclick="promeniMiniSlajd(this, -1)">❮</button>
+                <button class="slajder-strelica desno" onclick="promeniMiniSlajd(this, 1)">❯</button>
+            </div>
+        </div>
+        <div class="proizvod-tekst-blok">
+            <span class="proizvod-kategorija-oznaka" id="stolice-kat1-kategorija">Kategorija: MODERNE STOLICE</span>
+            <h2 id="stolice-kat1-naslov">Elegancija i Udobnost</h2>
+            <p id="stolice-kat1-tekst">Stolice koje redefinišu izgled moderne trpezarije ili radnog prostora kroz svedene linije i vrhunski komfor.
+               Pažljivo dizajnirane, bez ikakvog kompromisa u pogledu estetike.
+               Bilo da se odlučite za modele sa suptilno tapaciranim sedištima u neutralnim tonovima ili za čiste, svedene forme sa vitkim metalnim linijama, ove stolice unose vizuelnu lakoću i prefinjen stil u svaki savremeni enterijer.</p>              
+        </div>
+    </div>
+
+    <div class="proizvod-red">
+        <div class="proizvod-slika-blok">
+            <div class="mini-slajder-kontejner">
+                <div class="mini-slajder-traka">
+                    <img src="slike/Stolice/plave barske kozne.webp" alt="plave barske kozne" class="mini-slajd aktivna">
+                    <img src="slike/Stolice/4 barske.jpg" alt="4 barske" class="mini-slajd">
+                    <img src="slike/Stolice/2 plave barske.webp" alt="2 plave barske" class="mini-slajd">
+                </div>
+                <button class="slajder-strelica levo" onclick="promeniMiniSlajd(this, -1)">❮</button>
+                <button class="slajder-strelica desno" onclick="promeniMiniSlajd(this, 1)">❯</button>
+            </div>
+        </div>
+        <div class="proizvod-tekst-blok">
+            <span class="proizvod-kategorija-oznaka" id="stolice-kat2-kategorija">Kategorija: AKCENTNE I BARSKE STOLICE</span>
+            <h2 id="stolice-kat2-naslov">Barski Modeli i Fotelje sa Autentičnim Karakterom</h2>
+            <p id="stolice-kat2-tekst">Komadi nameštaja koji razbijaju monotoniju i postaju glavni vizuelni pečat svake prostorije u koju se postave.
+               Ova selekcija obuhvata moderne barske i polu-barske stolice, idealne za kuhinjska ostrva i šankove, kao i upečatljive polufotelje koje unose luksuznu lounge atmosferu u dnevni boravak ili spavaću sobu.
+               Spajanje unikatnih detalja, ove stolice donose upečatljiv dizajn i autentičnost tamo gde želite da privučete pažnju.</p>                
+        </div>
+    </div>
+
+    <div class="proizvod-red">
+        <div class="proizvod-slika-blok">
+            <div class="mini-slajder-kontejner">
+                <div class="mini-slajder-traka">
+                    <img src="slike/Stolice/stolice napolje lepe webp.webp" alt="stolice napolje lepe webp" class="mini-slajd">
+                    <img src="slike/Stolice/drvena ljuljajuca.webp" alt="drvena ljuljajuca" class="mini-slajd aktivna">
+                    <img src="slike/Stolice/neobicno od drveta .webp" alt="neobicno od drveta" class="mini-slajd">
+                </div>
+                <button class="slajder-strelica levo" onclick="promeniMiniSlajd(this, -1)">❮</button>
+                <button class="slajder-strelica desno" onclick="promeniMiniSlajd(this, 1)">❯</button>
+            </div>
+        </div>
+        <div class="proizvod-tekst-blok">
+            <span class="proizvod-kategorija-oznaka" id="stolice-kat3-kategorija">Kategorija: STOLICE ZA EKSTERIJER</span>
+            <h2 id="stolice-kat3-naslov">Maksimalna Otpornost i Dizajn na Otvorenom</h2>
+            <p id="stolice-kat3-tekst">Projektovane da izdrže sve izazove spoljašnjih uslova, a da istovremeno pruže maksimalnu eleganciju u vašoj bašti, letnjikovcu ili na terasi.
+               Izrađene od visokokvalitetnih i zaštićenih materijala, ove stolice su potpuno otporne na vlagu, sunčevo zračenje i habanje. Zahvaljujući laganoj, ali stabilnoj konstrukciji, lako se pomeraju i održavaju, čineći ih savršenim izborom za opuštanje na svežem vazduhu.</p>                
+        </div>
+    </div>
+
+</section>
+
+
+     <section class="proizvod-cik-cak-sekcija">
+     
+    </section>
+
+    <section class="galerija-baner">
+        <div class="galerija-baner-unutrasnji">
+            <h3 class="galerija-baner-naslov" id="stolice-baner-naslov">Kompletna galerija stolica</h3>
+            <p class="galerija-baner-tekst" id="stolice-baner-tekst">Pogledajte sve fotografije stolica</p>
+            <a href="galerija.html#stolice" class="dugme-proizvod dugme-galerija" id="baner-dugme">
+                🔎 Otvori galeriju radova
+            </a>
+        </div>
+    </section>
+
+    <footer class="glavni-footer">
+        <div class="footer-kontejner">
+            <div class="footer-kolona footer-logo-sekcija">
+                <a href="index.html">
+                    <img src="slike/logo transparent.png" alt="Logo">
+                </a>
+            </div>
+        
+            <div class="footer-kolona footer-nav-kolona">
+                <h4 id="footer-navigacija-naslov">Navigacija</h4>
+                <ul>
+                    <li><a href="index.html" id="footer-navigacija-pocetna">Početna</a></li>
+                    <li><a href="o-nama.html" id="footer-navigacija-onama">O nama</a></li>
+                    <li><a href="galerija.html" id="footer-navigacija-galerija">Galerija</a></li>
+                    <li><a href="kontakt.html" id="footer-navigacija-kontakt">Kontakt</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-kolona footer-nav-kolona">
+                <h4 id="footer-asortiman-naslov">Asortiman</h4>
+                <ul>
+                    <li><a href="kuhinje.html" id="footer-asortiman-kuhinje">Kuhinje</a></li>
+                    <li><a href="stolovi.html" id="footer-asortiman-stolovi">Stolovi</a></li>
+                    <li><a href="kreveti.html" id="footer-asortiman-kreveti">Kreveti</a></li>
+                    <li><a href="stolice.html" id="footer-asortiman-stolice">Stolice</a></li>
+                </ul>
+            </div>
+        
+            <div class="footer-kolona">
+                <h4 id="footer-kontakt-naslov">Kontakt Informacije</h4>
+                <ul>                    
+                    <li>
+                        <a href="tel:+381641234567"  id="footer-kontakt-telefon">
+                            📞 Telefon: +381 64 1234567
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:primermaila@gmail.com" id="footer-kontakt-email">
+                            📧 Email: primermaila@gmail.com
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+        
+    <script src="js/jquery-4.0.0.js"></script>
+    <script src="js/script.js"></script>
+    <button id="nazad-na-vrh" title="Idi na vrh">&#9650;</button>
+</body>
+</html>
