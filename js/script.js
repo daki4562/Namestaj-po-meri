@@ -6,11 +6,10 @@
 // === 3. PRILAGOĐAVANJE VELIČINE FONTA (Akcesibilnost) ===
 // === 4. MOBILNA NAVIGACIJA (Hamburger meni) ===
 // === 5. LOKALIZACIJA (Dvojezičnost - SR / EN) ===
-// === 6. INTERAKTIVNA HARMONIKA ===
-// === 7. MINI SLAJDERI NA STRANICAMA PROIZVODA ===
-// === 8. CENTRALNI KONTROLER APLIKACIJE ('DOMContentLoaded') ===
-// === 9. GALERIJSKI "MULTISLAJDER" (Tracking za sve multi-galerije) ===
-// === 10. JQUERY IMPLEMENTACIJA  Dugme za povratak na vrh ===
+// === 6. MINI SLAJDERI NA STRANICAMA PROIZVODA ===
+// === 7. CENTRALNI KONTROLER APLIKACIJE ('DOMContentLoaded') ===
+// === 8. GALERIJSKI "MULTISLAJDER" ===
+// === 9. JQUERY IMPLEMENTACIJA  Dugme za povratak na vrh ===
 // ============================================================
 
 
